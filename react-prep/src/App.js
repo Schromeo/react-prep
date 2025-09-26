@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Greeting from './Greeting'; // 导入我们新建的 Greeting 组件
+import Counter from './Counter';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello React!</h1>
-        <p>
-          Hello World! This is my first React App!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React from ReactJS.org
-        </a>
-      </header>
+      <h1>我的第一个组件化应用</h1>
+      <Greeting name="Schromeo" message="这是通过 Props 传递过来的消息！" />
+      <Greeting name="Cisco" message="祝你面试顺利！" />
+      <Counter /> {/* 使用 Counter 组件 */}
+      <Counter /> {/* 使用 Counter 组件 */}
     </div>
   );
 }
