@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-function AddUserForm() {
+function AddUserForm({onAddUser}) {
   // 1. 创建一个 state 来存储输入框的值，初始值为空字符串
   const [name, setName] = useState('');
 
@@ -16,6 +16,8 @@ function AddUserForm() {
   const handleSubmit = (event) => {
     // 阻止表单提交时的默认行为（即刷新页面）
     event.preventDefault(); 
+    if (!name.trim()) return; // 防止添加空用户名
+    onAddUser(name); // 调用传入的回调函数，传递当前的 name state
 
     // 在这里，我们可以用 name state 里的数据做些事情
     // 现在只是简单地弹出一个提示
